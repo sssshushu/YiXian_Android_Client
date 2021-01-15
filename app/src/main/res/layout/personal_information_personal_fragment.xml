@@ -14,7 +14,7 @@
                 android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/ziti"
-                android:text="杀敌数"
+                android:text="@string/history_kills"
                 android:textColor="#492D55"
                 android:textSize="20sp" />
 
@@ -23,7 +23,7 @@
                 android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/ziti"
-                android:text="战斗场次"
+                android:text="@string/history_battle"
                 android:textColor="#492D55"
                 android:textSize="20sp" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/ziti"
-                android:text="死亡数"
+                android:text="@string/history_death"
                 android:textColor="#492D55"
                 android:textSize="20sp" />
 
