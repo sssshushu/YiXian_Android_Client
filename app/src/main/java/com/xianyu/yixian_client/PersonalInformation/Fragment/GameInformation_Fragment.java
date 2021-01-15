@@ -10,6 +10,10 @@ import androidx.fragment.app.Fragment;
 import com.xianyu.yixian_client.PersonalInformation.PersonalInformationViewModel;
 import com.xianyu.yixian_client.databinding.PersonalInformationGameInformationFragmentBinding;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * @ProjectName: YiXian_Client
  * @Package: com.xianyu.yixian_client.Login
@@ -22,8 +26,9 @@ import com.xianyu.yixian_client.databinding.PersonalInformationGameInformationFr
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
+@AndroidEntryPoint
 public class GameInformation_Fragment extends Fragment {
-
+    @Inject
     public PersonalInformationViewModel viewModel;
     public PersonalInformationGameInformationFragmentBinding binding;
     @Override
@@ -31,9 +36,6 @@ public class GameInformation_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = PersonalInformationGameInformationFragmentBinding.inflate(inflater,container,false);
         return binding.getRoot();
-    }
-    public GameInformation_Fragment(PersonalInformationViewModel viewModel){
-        this.viewModel = viewModel;
     }
 
     @Override

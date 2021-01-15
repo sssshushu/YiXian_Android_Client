@@ -25,21 +25,19 @@ import com.xianyu.yixian_client.Login.LoginViewModel;
 public class Login_Fragment_Adapter extends FragmentStateAdapter {
     private static final int NUM_LOGIN_FRAGMENT = 3;
     private FragmentActivity activity;
-    private LoginViewModel loginViewModel;
 
-    public Login_Fragment_Adapter(FragmentActivity activity,LoginViewModel loginViewModel) {
+    public Login_Fragment_Adapter(FragmentActivity activity) {
         super(activity);
         // TODO Auto-generated constructor stub
         this.activity = activity;
-        this.loginViewModel = loginViewModel;
     }
     @NonNull
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0:return new Register_Fragment(loginViewModel);
-            case 1:return new Login_Fragment(loginViewModel);
-            case 2:return new Forget_Fragment(loginViewModel);
+            case 0:return new Register_Fragment();
+            case 1:return new Login_Fragment();
+            case 2:return new Forget_Fragment();
             default:return null;
         }
     }

@@ -5,6 +5,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.TypeConverters;
 
+import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Model.Repository.Repository;
 
 import java.util.ArrayList;
@@ -24,7 +25,9 @@ import java.util.List;
  */
 
 public class CardGroup {
+    @Expose
     String name;
+    @Expose
     @TypeConverters(ArrayList.class)
     ArrayList<Long> cards_id = new ArrayList<>();
     @Ignore

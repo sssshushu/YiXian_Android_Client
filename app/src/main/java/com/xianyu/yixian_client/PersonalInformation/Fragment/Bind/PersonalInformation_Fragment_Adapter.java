@@ -25,21 +25,19 @@ import com.xianyu.yixian_client.PersonalInformation.Fragment.History_Fragment;
 public class PersonalInformation_Fragment_Adapter extends FragmentStateAdapter {
     private static final int NUM_LOGIN_FRAGMENT = 3;
     private FragmentActivity activity;
-    private PersonalInformationViewModel loginViewModel;
 
-    public PersonalInformation_Fragment_Adapter(FragmentActivity activity, PersonalInformationViewModel loginViewModel) {
+    public PersonalInformation_Fragment_Adapter(FragmentActivity activity) {
         super(activity);
         // TODO Auto-generated constructor stub
         this.activity = activity;
-        this.loginViewModel = loginViewModel;
     }
     @NonNull
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0:return new History_Fragment(loginViewModel);
-            case 1:return new Personal_Fragment(loginViewModel);
-            case 2:return new GameInformation_Fragment(loginViewModel);
+            case 0:return new History_Fragment();
+            case 1:return new Personal_Fragment();
+            case 2:return new GameInformation_Fragment();
             default:return null;
         }
     }

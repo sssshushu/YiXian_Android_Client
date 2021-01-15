@@ -17,6 +17,10 @@ import com.xianyu.yixian_client.Model.Room.Entity.User;
 import com.xianyu.yixian_client.R;
 import com.xianyu.yixian_client.databinding.LoginFragmentBinding;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * @ProjectName: YiXian_Client
  * @Package: com.xianyu.yixian_client.Login
@@ -29,7 +33,9 @@ import com.xianyu.yixian_client.databinding.LoginFragmentBinding;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
+@AndroidEntryPoint
 public class Login_Fragment extends Fragment {
+    @Inject
     public LoginViewModel viewModel;
     public com.xianyu.yixian_client.databinding.LoginFragmentBinding binding;
     @Override
@@ -90,9 +96,6 @@ public class Login_Fragment extends Fragment {
             }
         });
         return binding.getRoot();
-    }
-    public Login_Fragment(LoginViewModel viewModel){
-        this.viewModel = viewModel;
     }
     @Override
     public void onDestroy() {

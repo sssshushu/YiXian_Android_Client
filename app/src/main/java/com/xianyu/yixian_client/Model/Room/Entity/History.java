@@ -2,8 +2,12 @@ package com.xianyu.yixian_client.Model.Room.Entity;
 
 import java.sql.Date;
 
+import com.google.gson.annotations.Expose;
+
 public class History {
+    @Expose
     int kills = 0;
+    @Expose
     boolean result = false;
     int time = 0;
     int battle = 0;

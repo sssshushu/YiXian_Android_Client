@@ -3,15 +3,19 @@ package com.xianyu.yixian_client.Model.RPC;
 import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Core;
 
-import java.util.Arrays;
 
 public class ClientRequestModel {
-    @Expose
+    @Expose(serialize = false,deserialize = false)
     public Object Result;
+    @Expose
     public String JsonRpc;
+    @Expose
     public String MethodId;
+    @Expose
     public Object[] Params;
+    @Expose
     public String Id;
+    @Expose
     public String Service;
 
 
@@ -23,15 +27,19 @@ public class ClientRequestModel {
     }
 
     public void setResult(Object result) {
-        Result = result;
-        result.notifyAll();
+        synchronized (this){
+            Result = result;
+            this.notify();
+        }
     }
 
     public Object getResult() throws InterruptedException {
-        while(Result == null){
-            Result.wait();
+        synchronized (this){
+            if (Result == null){
+                this.wait();
+            }
+            return Result;
         }
-        return Result;
     }
 
     @Override

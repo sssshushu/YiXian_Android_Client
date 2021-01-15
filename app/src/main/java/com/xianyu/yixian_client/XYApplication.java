@@ -39,10 +39,6 @@ public class XYApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Core.gson = new Gson().newBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .excludeFieldsWithoutExposeAnnotation()
-                .create();
         try {
             init_data();
         } catch (InterruptedException e) {

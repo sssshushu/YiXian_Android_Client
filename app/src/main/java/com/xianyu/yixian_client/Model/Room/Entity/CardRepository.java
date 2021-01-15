@@ -3,6 +3,8 @@ package com.xianyu.yixian_client.Model.Room.Entity;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * @ProjectName: YiXian_Client
  * @Package: com.xianyu.yixian_client.Model.Room.Entity
@@ -24,8 +26,11 @@ import androidx.room.ForeignKey;
                         childColumns = "skillcard_id", onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)}
         )
 public class CardRepository {
+    @Expose
     long user_id;
+    @Expose
     long skillcard_id;
+    @Expose
     String solution;
 
     public long getUser_id() {

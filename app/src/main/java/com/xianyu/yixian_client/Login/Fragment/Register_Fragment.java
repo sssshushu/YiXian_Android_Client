@@ -17,6 +17,8 @@ import com.xianyu.yixian_client.Model.Room.Entity.User;
 import com.xianyu.yixian_client.R;
 import com.xianyu.yixian_client.databinding.RegisterFragmentBinding;
 
+import javax.inject.Inject;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -33,6 +35,7 @@ import dagger.hilt.android.AndroidEntryPoint;
  */
 @AndroidEntryPoint
 public class Register_Fragment extends Fragment  {
+    @Inject
     public LoginViewModel viewModel;
     public RegisterFragmentBinding binding;
     @Override
@@ -117,8 +120,8 @@ public class Register_Fragment extends Fragment  {
         });
         return binding.getRoot();
     }
-    public Register_Fragment(LoginViewModel viewModel){
-        this.viewModel = viewModel;
+    public Register_Fragment(){
+
     }
     @Override
     public void onDestroy() {

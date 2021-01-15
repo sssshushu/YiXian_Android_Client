@@ -1,13 +1,18 @@
 package com.xianyu.yixian_client.Model.RPC;
 
+import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Core;
 
 import java.util.Arrays;
 
 public class ServerRequestModel {
+    @Expose
     public String JsonRpc;
+    @Expose
     public String MethodId;
+    @Expose
     public Object[] Params;
+    @Expose
     public String Service;
 
     public ServerRequestModel(String jsonRpc, String methodId, Object[] params, String service) {

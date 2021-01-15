@@ -63,8 +63,8 @@ public class SocketClient {
     public void start() throws Exception {
         NioEventLoopGroup group = new NioEventLoopGroup();
         try {
-            Bootstrap b = new Bootstrap();                //1
-            b.group(group)                                //2
+            bootstrap = new Bootstrap();                //1
+            bootstrap.group(group)                                //2
                     .channel(NioSocketChannel.class)            //3
                     .handler(new ChannelInitializer<SocketChannel>() {    //5
                         @Override
@@ -72,8 +72,11 @@ public class SocketClient {
                                 throws Exception {
                             ch.pipeline().addLast(new CustomDecoder());
                             ch.pipeline().addLast(new StringDecoder());
+
                             ch.pipeline().addLast(new IdleStateHandler(0,0,5));
                             ch.pipeline().addLast(new CustomHeartbeatHandler(SocketClient.this));
+
+                            ch.pipeline().addLast(new CustomEncoder());
                         }
                     });
             doConnect();
@@ -87,7 +90,7 @@ public class SocketClient {
         if (channel != null && channel.isActive()) {
             return;
         }
-        ChannelFuture future = bootstrap.connect("127.0.0.1", 12345);
+        ChannelFuture future = bootstrap.connect(host, port);
         future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture futureListener) throws Exception {
                 if (futureListener.isSuccess()) {
@@ -114,7 +117,7 @@ public class SocketClient {
             channel.writeAndFlush(request);
         }
     }
-    public void Send(ClientRequestModel request) throws UnsupportedEncodingException {
+    public void Send(ClientRequestModel request) {
         if(channel!=null && channel.isActive()){
             int id = random.nextInt();
             while (tasks.containsKey(id)){
