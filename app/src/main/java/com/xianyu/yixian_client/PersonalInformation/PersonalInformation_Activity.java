@@ -16,7 +16,6 @@ import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 @AndroidEntryPoint
@@ -38,7 +37,8 @@ public class PersonalInformation_Activity extends AppCompatActivity {
                     //fragment绑定初始化
                     paper = findViewById(R.id.paper);
                     paper.setPageTransformer(new DepthPageTransformer());
-                    paper.setAdapter(new PersonalInformation_Fragment_Adapter(this, viewModel));
+                    paper.setAdapter(new PersonalInformation_Fragment_Adapter(this,viewModel));
+
                 });
     }
 

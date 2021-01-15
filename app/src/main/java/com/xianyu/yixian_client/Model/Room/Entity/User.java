@@ -37,6 +37,7 @@ public class User
     private String passwords;
     private String information;
     private int battle_Count;//战斗场次
+    private int time;//游戏时长
     private int exp;//经验
     private int lv = 1;//等级
     private String title = "炼气";//称号

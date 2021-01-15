@@ -22,16 +22,25 @@
                android:fontFamily="@font/ziti"
                android:text="战斗场次"
                android:textColor="#492D55"
-               android:textSize="20sp" />
+               android:textSize="30sp" />
 
            <TextView
-               android:id="@+id/textView7"
+               android:id="@+id/history_exp"
+               android:layout_width="170dp"
+               android:layout_height="50dp"
+               android:fontFamily="@font/ziti"
+               android:text="@string/history_exp"
+               android:textColor="#492D55"
+               android:textSize="30sp" />
+
+           <TextView
+               android:id="@+id/battle_text"
                android:layout_width="170dp"
                android:layout_height="50dp"
                android:fontFamily="@font/ziti"
                android:text="回合场次"
                android:textColor="#492D55"
-               android:textSize="20sp" />
+               android:textSize="30sp" />
 
            <TextView
                android:id="@+id/textView8"
@@ -40,18 +49,17 @@
                android:fontFamily="@font/ziti"
                android:text="即时场次"
                android:textColor="#492D55"
-               android:textSize="20sp" />
+               android:textSize="30sp" />
        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/history_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:spanCount="1"
-            tools:listitem="@layout/personal_information_history_item"
-            >
+            tools:listitem="@layout/personal_information_history_item">
 
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
