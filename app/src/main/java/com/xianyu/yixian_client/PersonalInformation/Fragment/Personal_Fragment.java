@@ -15,6 +15,10 @@ import com.xianyu.yixian_client.databinding.PersonalInformationPersonalFragmentB
 
 import org.w3c.dom.Text;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * @ProjectName: YiXian_Client
  * @Package: com.xianyu.yixian_client.Login
@@ -27,7 +31,9 @@ import org.w3c.dom.Text;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
+@AndroidEntryPoint
 public class Personal_Fragment extends Fragment {
+    @Inject
     public PersonalInformationViewModel viewModel;
     public PersonalInformationPersonalFragmentBinding binding;
     @Override
@@ -66,9 +72,6 @@ public class Personal_Fragment extends Fragment {
 
     }
 
-    public Personal_Fragment(PersonalInformationViewModel viewModel){
-        this.viewModel = viewModel;
-    }
     @Override
     public void onDestroy() {
         onDestroyView();

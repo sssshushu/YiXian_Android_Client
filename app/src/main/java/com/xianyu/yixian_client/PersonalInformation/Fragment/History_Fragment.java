@@ -14,6 +14,8 @@ import com.xianyu.yixian_client.PersonalInformation.PersonalInformationViewModel
 import com.xianyu.yixian_client.R;
 import com.xianyu.yixian_client.databinding.PersonalInformationHistoryFragmentBinding;
 
+import javax.inject.Inject;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -30,6 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint;
  */
 @AndroidEntryPoint
 public class History_Fragment extends Fragment  {
+    @Inject
     public PersonalInformationViewModel viewModel;
     public PersonalInformationHistoryFragmentBinding binding;
     @Override
@@ -46,9 +49,6 @@ public class History_Fragment extends Fragment  {
         recyclerView.setAdapter(historyAdapt);
     }
 
-    public History_Fragment(PersonalInformationViewModel viewModel){
-        this.viewModel = viewModel;
-    }
     @Override
     public void onDestroy() {
         onDestroyView();
