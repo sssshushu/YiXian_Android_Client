@@ -4,6 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Model.Room.Convert.BuffConvert;
 
 import java.util.ArrayList;
@@ -22,24 +23,42 @@ import java.util.ArrayList;
  */
 @Entity(tableName = "skillcard")
 public class SkillCard {
+    @Expose
     @PrimaryKey
     long id;//卡牌ID-
+    @Expose
     String name = "";//卡牌名字
+    @Expose
     String description = "";//卡牌描述
+    @Expose
     int mp;//释放卡牌所需消耗的仙气值
+    @Expose
     int probability;//卡牌觉醒的概率
+    @Expose
     int auxiliary_hp;//己方HP效果
+    @Expose
     int auxiliary_mp;//己方MP效果
+    @Expose
     int enemy_hp;//敌人HP效果
+    @Expose
     int enemy_mp;//敌人MP效果
+    @Expose
     long author_id;//作者ID-
+    @Expose
     boolean magic;//是否魔法类
+    @Expose
     boolean physics;//是否物理类
+    @Expose
     boolean cure;//是否治疗类
+    @Expose
     boolean attack;//是否攻击类
+    @Expose
     boolean eternal;//是否永恒类
+    @Expose
     long update;//卡牌最新版本-
+    @Expose
     int max_enemy;//最大锁定敌人数 魂命
+    @Expose
     int max_auxiliary;//最大锁定友军数 灵命
     @TypeConverters(BuffConvert.class)
     ArrayList<Buff> buffs = new ArrayList<>();

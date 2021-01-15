@@ -2,12 +2,17 @@ package com.xianyu.yixian_client;
 
 
 import android.content.Context;
+import android.os.Debug;
+import android.util.Log;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
+import com.xianyu.yixian_client.Model.Log.Log.Tag;
+import com.xianyu.yixian_client.Model.RPC.RPCRequestProxy;
+import com.xianyu.yixian_client.Model.RPC.Request.IUser;
 import com.xianyu.yixian_client.Model.Room.Dao.UserDao;
 import com.xianyu.yixian_client.Model.Room.DataBase_Room;
 
@@ -22,6 +27,9 @@ import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -65,7 +73,29 @@ public class UnitTest_Mock {
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }
+    public class User implements IUser{
+        @Override
+        public String hello(String msg) {
+            return "null";
+        }
 
+        @Override
+        public String add(int d) {
+            return null;
+        }
+    }
+    @Test
+    public void proxy(){
+        RPCRequestProxy proxy = new RPCRequestProxy();
+        Class<?>[] d =  User.class.getInterfaces();
+        IUser user = (IUser) Proxy.newProxyInstance(User.class.getClassLoader(), d, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                return null;
+            }
+        });
+        System.out.println(user.hello("asd"));
+    }
 
 
     @After

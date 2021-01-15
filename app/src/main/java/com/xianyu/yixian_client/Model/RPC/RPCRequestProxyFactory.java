@@ -9,7 +9,7 @@ import kotlin.Triple;
 
 public class RPCRequestProxyFactory {
     static ConcurrentHashMap<Triple<String,String,String>,Object> services = new ConcurrentHashMap<>();
-    public static <T> T Register(Class<T> classImp,String serviceName,String hostname,String port){
+    public static <T> T Register(Class<T> interface_class, String serviceName, String hostname, String port){
         T service = null;
         Triple<String,String,String> key = new Triple<String,String,String>(serviceName,hostname,port);
         service = (T)services.get(key);
@@ -18,8 +18,6 @@ public class RPCRequestProxyFactory {
             Pair<String,String> clientKey = new Pair<>(hostname,port);
             try{
                 socketClient = RPCClientFactory.GetClient(clientKey);
-                service = RPCRequestProxy.Create(classImp,serviceName,clientKey);
-                services.put(key,service);
             }
             catch (Exception err){
                 if(socketClient == null){
@@ -27,6 +25,8 @@ public class RPCRequestProxyFactory {
                 }
                 else socketClient.doConnect();
             }
+            service = RPCRequestProxy.Create(interface_class,serviceName,clientKey);
+            services.put(key,service);
         }
         return service;
     }

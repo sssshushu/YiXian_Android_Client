@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Model.Enums;
 
 /**
@@ -19,12 +20,18 @@ import com.xianyu.yixian_client.Model.Enums;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
+
 public class Buff {
     public enum Category { Freeze };
+    @Expose
     String name;//状态名称
+    @Expose
     int duration_Immediate;//效果持续时长
+    @Expose
     int duration_Round;//效果持续回合
+    @Expose
     int power;//能力
+    @Expose
     Category category;//类型
 
     public String getName() {

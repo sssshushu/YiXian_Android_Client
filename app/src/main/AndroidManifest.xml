@@ -33,9 +33,6 @@
 
         </activity>
 
-        <service
-            android:name=".Login.LoginService"
-            android:enabled="true" />
 
         <activity
             android:name=".Login.Login"

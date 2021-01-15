@@ -1,6 +1,7 @@
 package com.xianyu.yixian_client.Model.RPC;
 
 
+import android.os.Environment;
 import android.util.Log;
 import android.util.Pair;
 
@@ -15,7 +16,7 @@ public class RPCClientFactory {
             SocketClient socketClient = null;
             socketClient = clients.get(key);
             if(socketClient == null){
-                socketClient = new SocketClient("192.168.43.238",28015);
+                socketClient = new SocketClient(key.first,Integer.parseInt(key.second));
                 clients.put(key, socketClient);
                 try {
                     socketClient.start();

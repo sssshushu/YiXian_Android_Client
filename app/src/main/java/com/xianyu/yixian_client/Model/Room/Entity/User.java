@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import com.google.gson.annotations.Expose;
 import com.xianyu.yixian_client.Model.Room.Convert.ActiveConvert;
 import com.xianyu.yixian_client.Model.Room.Convert.GroupConvert;
 import com.xianyu.yixian_client.Model.Room.Convert.HistoryConvert;
@@ -27,27 +28,44 @@ import java.util.ArrayList;
 public class User
 {
     public enum State { Leisure, Ready, Queue, Gaming , Offline};
+    @Expose
     @PrimaryKey
     private long id;
+    @Expose
     private String userName;
+    @Expose
     private String nickName;
+    @Expose
     private int upgrade_num=0;
+    @Expose
     private int create_num=0;
+    @Expose
     private int money = 0;
+    @Expose
     private String passwords;
+    @Expose
     private String information;
+    @Expose
     private int battle_Count;//战斗场次
-    private int time;//游戏时长
+    @Expose
     private int exp;//经验
+    @Expose
     private int lv = 1;//等级
+    @Expose
     private String title = "炼气";//称号
+    @Expose
     @TypeConverters(ActiveConvert.class)
     private Enum<State> active = State.Offline;//玩家当前游戏状态
+    @Expose
     private int kills;//击杀数
+    @Expose
     private int deaths;//死亡数
+    @Expose
     private long registration_date;//注册时间
+    @Expose
     @TypeConverters(GroupConvert.class)
     ArrayList<CardGroup> cardGroups = new ArrayList<>();
+    @Expose
     @TypeConverters(HistoryConvert.class)
     ArrayList<History> history = new ArrayList<>();
 

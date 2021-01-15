@@ -9,6 +9,7 @@ import com.xianyu.yixian_client.Model.RPC.ServerRequestModel;
 import java.lang.reflect.Method;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -21,7 +22,7 @@ import kotlin.Triple;
  * @email yongshun1228@gmail.com
  * @created 16/9/18 13:02
  */
-public class CustomHeartbeatHandler extends ChannelInboundHandlerAdapter{
+public class CustomHeartbeatHandler extends ChannelHandlerAdapter {
 
     private int heartbeatCount = 0;
     private SocketClient socketClient;
@@ -70,7 +71,7 @@ public class CustomHeartbeatHandler extends ChannelInboundHandlerAdapter{
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.err.println("---" + ctx.channel().remoteAddress() + " is active---");
+        System.out.println("---" + ctx.channel().remoteAddress() + " is active---");
     }
 
     @Override
@@ -79,7 +80,7 @@ public class CustomHeartbeatHandler extends ChannelInboundHandlerAdapter{
     }
 
     protected void handleReaderIdle(ChannelHandlerContext ctx) {
-        System.err.println("---READER_IDLE---");
+        System.out.println("---READER_IDLE---");
     }
 
     protected void handleWriterIdle(ChannelHandlerContext ctx) {
@@ -87,6 +88,6 @@ public class CustomHeartbeatHandler extends ChannelInboundHandlerAdapter{
     }
 
     protected void handleAllIdle(ChannelHandlerContext ctx) {
-        System.err.println("---ALL_IDLE---");
+
     }
 }

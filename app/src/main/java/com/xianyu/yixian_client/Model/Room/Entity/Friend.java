@@ -4,6 +4,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * @ProjectName: YiXian_Client
  * @Package: com.xianyu.yixian_client.Model.Room.Entity
@@ -25,8 +27,11 @@ import androidx.room.PrimaryKey;
                         childColumns = "user_2", onDelete = ForeignKey.CASCADE)}
 )
 public class Friend {
+    @Expose
     long user_1;
+    @Expose
     long user_2;
+    @Expose
     String solution;
 
     public long getUser_1() {
