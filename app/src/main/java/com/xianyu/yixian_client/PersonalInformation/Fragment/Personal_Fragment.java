@@ -45,26 +45,29 @@ public class Personal_Fragment extends Fragment {
     }
 
     private void init() {
+
+
         TextView textView = binding.getRoot().findViewById(R.id.kills_text);
-        textView.setText(Core.liveUser.getValue().getKills());
+        textView.setText(Integer.toString(Core.liveUser.getValue().getKills()));
 
         TextView textView1 = binding.getRoot().findViewById(R.id.battle_text);
-        textView.setText(Core.liveUser.getValue().getBattle_Count());
+        textView.setText(Integer.toString(Core.liveUser.getValue().getBattle_Count()));
 
         TextView textView2 = binding.getRoot().findViewById(R.id.textView8);
-        textView.setText(Core.liveUser.getValue().getDeaths());
+        textView.setText(Integer.toString(Core.liveUser.getValue().getDeaths()));
 
         TextView textView3 = binding.getRoot().findViewById(R.id.title_text);
         textView.setText(Core.liveUser.getValue().getTitle());
 
         TextView textView4 = binding.getRoot().findViewById(R.id.lv_text);
-        textView.setText(Core.liveUser.getValue().getLv());
+        textView.setText(Integer.toString(Core.liveUser.getValue().getLv()));
 
         TextView textView5 = binding.getRoot().findViewById(R.id.history_exp);
-        textView.setText(Core.liveUser.getValue().getExp());
+        textView.setText(Integer.toString(Core.liveUser.getValue().getExp()));
 
         TextView textView6 = binding.getRoot().findViewById(R.id.time_text);
-        textView.setText((int) Core.liveUser.getValue().getRegistration_date());
+        textView.setText(Long.toString(Core.liveUser.getValue().getRegistration_date()));
+
 
 
 
