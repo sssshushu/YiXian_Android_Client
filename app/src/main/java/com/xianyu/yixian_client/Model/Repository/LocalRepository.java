@@ -35,6 +35,9 @@ public class LocalRepository implements ILocalRepository{
         db.userDao().insert(user);
     }
 
+    public Single<List<User>> queryUsers() {
+        return db.userDao().query();
+    }
 
     @Override
     public void deleteUser(User user) {
@@ -47,18 +50,13 @@ public class LocalRepository implements ILocalRepository{
     }
 
     @Override
-    public Single<User> queryUserByUserName(String userName) {
-        return db.userDao().queryByUserName(userName);
-    }
-
-    @Override
-    public Single<User> queryUserById(long id) {
-        return db.userDao().queryById(id);
+    public Single<List<User>> queryUserById(long id) {
+        return null;
     }
 
     @Override
     public Single<List<User>> queryAllUsers() {
-        return db.userDao().queryAll();
+        return null;
     }
 
 

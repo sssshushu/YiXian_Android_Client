@@ -29,7 +29,7 @@ import io.reactivex.Single;
 @Dao
 public interface UserDao {
     @Insert
-    public void insert(User... user);
+    public void insert(User... arg);
 
     @Update
     public void update(User... user);
@@ -38,10 +38,8 @@ public interface UserDao {
     public void delete(User... user);
 
     @Query("SELECT * FROM user WHERE username = :username")
-    public Single<User> queryByUserName(String username);
-    @Query("SELECT * FROM user WHERE id = :id")
-    public Single<User> queryById(long id);
+    public Single<User> query(String username);
 
     @Query("SELECT * FROM user")
-    public Single<List<User>> queryAll();
+    public Single<List<User>> query();
 }

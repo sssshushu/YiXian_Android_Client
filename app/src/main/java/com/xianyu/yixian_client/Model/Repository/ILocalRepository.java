@@ -28,8 +28,7 @@ interface ILocalRepository {
     public void insertUser(User user);
     public void deleteUser(User user);
     public void updateUser(User user);
-    public Single<User> queryUserByUserName(String userName);
-    public Single<User> queryUserById(long id);
+    public Single<List<User>> queryUserById(long id);
     public Single<List<User>> queryAllUsers();
 
 

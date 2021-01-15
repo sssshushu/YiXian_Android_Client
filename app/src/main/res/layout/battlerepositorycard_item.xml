@@ -67,16 +67,14 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent"
                 >
-
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/mp_text"
+                    android:tooltipText="@string/skillCard_mp"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_mp"
-                    android:tooltipText="@string/skillCard_mp"
-
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/probability_text"
@@ -85,7 +83,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_probability"
-                    android:tooltipText="@string/skillCard_probability"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/max_enemy_text"
@@ -94,7 +91,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_max_enemy"
-                    android:tooltipText="@string/skillCard_max_enemy"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/max_auxiliary_text"
@@ -103,7 +99,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_max_auxiliary"
-                    android:tooltipText="@string/skillCard_max_auxiliary"
                     />
             </LinearLayout>
 
@@ -129,7 +124,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_auxiliary_hp"
-                    android:tooltipText="@string/skillCard_auxiliary_hp"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/auxiliary_mp_text"
@@ -138,7 +132,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_mp"
-                    android:tooltipText="@string/skillCard_mp"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/enemy_hp_text"
@@ -147,7 +140,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_enemy_mp"
-                    android:tooltipText="@string/skillCard_enemy_mp"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/enemy_mp_text"
@@ -156,7 +148,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/skillCard_auxiliary_mp"
-                    android:tooltipText="@string/skillCard_auxiliary_mp"
                     />
             </LinearLayout>
         </LinearLayout>
